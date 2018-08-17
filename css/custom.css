@@ -22,3 +22,12 @@
   max-height: calc(100vh - 200px) !important ;
   overflow-y: auto !important;
 }
+hr{
+  border-top: 1px solid #ddd !important;
+}
+.sub-title{
+  font-style: italic;
+}
+.ml-15{
+  margin-left: 15px !important;
+}

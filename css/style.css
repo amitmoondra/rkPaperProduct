@@ -8,9 +8,8 @@
 /*General*/
 body {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	font-size: 18px;
 	font-size: normal;
-	font-smooth: always;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 }
@@ -779,14 +778,15 @@ textarea:focus {
 	background: #f2f3f4;	
 }
 
-.infrastructures-style-one .infrastructure-block {
+.infrastructures-style-one .service-row{
 	position: relative;
-	margin-bottom: 40px;	
+	margin-bottom: 20px;	
 }
 
-.infrastructures-style-one .infrastructures-column .content-outer {
+.infrastructures-style-one .content-outer {
 	position: relative;
-	float: right;
+	float: left;
+	width: 100%;
 	max-width: 700px;
 	padding: 80px 20px 40px 40px;	
 }
@@ -1163,12 +1163,13 @@ textarea:focus {
 
 /*Client*/
 #client {
-	margin-top: 100px;
+	margin-top: 50px;
 	text-align: center;
 }
 
 #client .col-md-2 {
 	height: 100px;
+	margin-top: 25px;
 }
 
 #client span {
