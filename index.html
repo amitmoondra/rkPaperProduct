@@ -37,6 +37,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/lightbox.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://smtpjs.com/v2/smtp.js"></script>
 	<!-- =======================================================
     Author: Amit Moondra
   ======================================================= -->
@@ -517,31 +518,31 @@
 						<div id="sendmessage">Your message has been sent. Thank you!</div>
 						<div id="errormessage"></div>
 
-						<form action="" method="post" role="form" class="form contactForm">
+						<form v-on:submit.prevent="submitForm" method="post" role="form" class="form contactForm">
 							<div class="col-md-4">
 								<div class="form-group">
-									<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+									<input type="text" name="name" class="form-control" v-model="name" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required
 									/>
 									<div class="validation"></div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email"
+									<input type="email" class="form-control" name="email" id="email" v-model="email" placeholder="Your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" data-rule="email" data-msg="Please enter a valid email" required
 									/>
 									<div class="validation"></div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject"
+									<input type="text" class="form-control" name="subject" id="subject" v-model="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required
 									/>
 									<div class="validation"></div>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+									<textarea class="form-control" name="message" rows="5" data-rule="required" v-model="body" data-msg="Please write something for us" placeholder="Message" required></textarea>
 									<div class="validation"></div>
 								</div>
 							</div>
